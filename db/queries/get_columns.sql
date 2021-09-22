@@ -1,0 +1,16 @@
+select TABLE_NAME,
+       COLUMN_NAME,
+       COLUMN_DEFAULT,
+       IS_NULLABLE,
+       DATA_TYPE,
+       CHARACTER_MAXIMUM_LENGTH,
+       NUMERIC_PRECISION,
+       NUMERIC_SCALE,
+       DATETIME_PRECISION,
+       COLUMN_TYPE,
+       COLUMN_KEY,
+       COLUMN_COMMENT
+from information_schema.COLUMNS col
+where TABLE_SCHEMA = ?
+order by TABLE_NAME, ORDINAL_POSITION
+;
